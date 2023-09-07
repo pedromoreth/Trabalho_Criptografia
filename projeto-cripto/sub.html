@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Criptografia de Mensagem - Substituição</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="aes.html">Criptografia AES</a></li>
+            <li><a href="des.html">Criptografia DES</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <h1>Criptografia de Mensagem - Substituição</h1>
+
+    <form>
+        <br>
+        <h3><label for="mensagem" id="msg">Mensagem:</label><br><br></h3>
+        <textarea id="mensagem" placeholder="Insira aqui a mensagem a ser criptografada" rows=5 cols=60></textarea> <br><br>
+        <button type="button" onclick="criptografarSUB()">Criptografar</button>
+    </form>
+
+    <br>
+    <h2>Saída:</h2>
+    <div id="saidaCriptografadaSubstituicao"></div>
+    <div id="saidaDescriptografadaSubstituicao"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/2.3.1/jsencrypt.min.js"></script>
+    <script src="index.js"></script>
+    <script>
+        function criptografarSUB() {
+            const mensagem = document.getElementById("mensagem").value;
+
+            // Criptografando a mensagem com Substituição de caracteres
+            const mensagemCriptografadaSubstituicao = substituicaoCriptografada(mensagem);
+            document.getElementById("saidaCriptografadaSubstituicao").textContent = "Mensagem criptografada com Substituição: " + mensagemCriptografadaSubstituicao;
+
+            // Descriptografando a mensagem com Substituição de caracteres
+            const mensagemDescriptografadaSubstituicao = substituicaoDescriptografada(mensagemCriptografadaSubstituicao);
+            document.getElementById("saidaDescriptografadaSubstituicao").textContent = "Mensagem descriptografada com Substituição: " + mensagemDescriptografadaSubstituicao;
+        }
+
+        // Função para realizar a criptografia por substituição de caracteres
+        function substituicaoCriptografada(mensagem) {
+            const substituicao = {
+                'a': 'x',
+                'x': 'a',
+                'b': 'y',
+                'y': 'b',
+                'c': 'z',
+                'z': 'c',
+                'd': 'p',
+                'p': 'd',
+                'e': 'q',
+                'q': 'e',
+                'f': 't',
+                't': 'f',
+                'g': 'l',
+                'l': 'g',
+                'h': 'm',
+                'm': 'h',
+                'n': 'i',
+                'i': 'n'
+            };
+
+            let mensagemCriptografada = '';
+            for (let i = 0; i < mensagem.length; i++) {
+                const caractere = mensagem[i].toLowerCase();
+                if (substituicao.hasOwnProperty(caractere)) {
+                    mensagemCriptografada += substituicao[caractere];
+                } else {
+                    mensagemCriptografada += mensagem[i];
+                }
+            }
+
+            return mensagemCriptografada;
+        }
+
+        // Função para realizar a descriptografia por substituição de caracteres
+        function substituicaoDescriptografada(mensagemCriptografada) {
+            const substituicao = {
+                'a': 'x',
+                'x': 'a',
+                'b': 'y',
+                'y': 'b',
+                'c': 'z',
+                'z': 'c',
+                'd': 'p',
+                'p': 'd',
+                'e': 'q',
+                'q': 'e',
+                'f': 't',
+                't': 'f',
+                'g': 'l',
+                'l': 'g',
+                'h': 'm',
+                'm': 'h',
+                'n': 'i',
+                'i': 'n'
+            };
+
+            let mensagemDescriptografada = '';
+            for (let i = 0; i < mensagemCriptografada.length; i++) {
+                const caractere = mensagemCriptografada[i].toLowerCase();
+                if (substituicao.hasOwnProperty(caractere)) {
+                    mensagemDescriptografada += substituicao[caractere];
+                } else {
+                    mensagemDescriptografada += mensagemCriptografada[i];
+                }
+            }
+
+            return mensagemDescriptografada;
+        }
+    </script>
+
+    <div class="footer">
+        <p>&copy; 2023 Trabalho de criptografia. Todos os direitos reservados a <a href="https://uenf.br/portal/">UENF</a>- CCT - LCMT.</p>
+    </div>
+</body>
+
+</html>

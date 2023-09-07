@@ -1,0 +1,154 @@
+body {
+    background: linear-gradient(to right, #FFEDBC, #ED4264);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #232323;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #232323
+}
+
+#mensagem {
+    border-radius: 10px;
+    margin-right: 5px;
+    padding: 15px;
+}
+
+button {
+    border-radius: 50px;
+    border-style: none;
+    box-shadow: 4px 4px 4px #686868;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    height: 50px;
+    border-radius: 50px;
+    padding: 15px;
+    color: #4d4d53;
+}
+
+button:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+
+/* Barra de navegação */
+
+nav {
+    background-color: linear-gradient(to right, #FFEDBC, #ED4264);
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Time */
+
+.card-body {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: linear-gradient(to right, #FFEDBC, #ED4264);
+    border-top: 1px solid #fff;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    width: 50%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.about-title {
+    margin-top: 0;
+}
+
+.crypto-info {
+    margin-bottom: 30px;
+}
+
+.crypto-info h4 {
+    margin-top: 0;
+}
+
+.crypto-info p {
+    margin-bottom: 10px;
+}
+
+.crypto-info ol {
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.crypto-info ol li {
+    margin-bottom: 5px;
+}
+
+a {
+    color: #0066cc;
+    /* Cor do link */
+    text-decoration: none;
+    /* Remover sublinhado */
+    font-weight: bold;
+    /* Texto em negrito */
+    font-size: 18px;
+    /* Tamanho da fonte */
+}
+
+a:hover {
+    color: #003366;
+    /* Cor do link ao passar o mouse */
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 767px) {
+    .col-md-6 {
+        width: 100%;
+    }
+}

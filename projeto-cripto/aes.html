@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Criptografia de Mensagem - AES</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="des.html">Criptografia DES</a></li>
+            <li><a href="sub.html">Criptografia por Substituição</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+    <h1>Criptografia de Mensagem - AES</h1>
+    <form>
+        <br>
+        <h3><label for="mensagem" id="msg">Mensagem:</label><br><br></h3>
+        <textarea id="mensagem" placeholder="Insira aqui a mensagem a ser criptografada" rows=5 cols=60></textarea> <br><br>
+        <button type="button" onclick="criptografarAES()">Criptografar</button>
+    </form>
+
+    <br>
+    <h2>Saída:</h2>
+    <div id="saidaCriptografadaAES"></div>
+    <div id="saidaDescriptografadaAES"></div>
+
+    <script>
+        // Função para criptografar a mensagem usando AES
+        function criptografarAES() {
+            const mensagem = document.getElementById("mensagem").value;
+            const chaveAES = "chave-secreta";
+
+            // Criptografando a mensagem com AES
+            const mensagemCriptografadaAES = CryptoJS.AES.encrypt(mensagem, chaveAES).toString();
+            document.getElementById("saidaCriptografadaAES").textContent = "Mensagem criptografada com AES: " + mensagemCriptografadaAES;
+
+            // Descriptografando a mensagem com AES
+            const mensagemDescriptografadaAES = CryptoJS.AES.decrypt(mensagemCriptografadaAES, chaveAES).toString(CryptoJS.enc.Utf8);
+            document.getElementById("saidaDescriptografadaAES").textContent = "Mensagem descriptografada com AES: " + mensagemDescriptografadaAES;
+        }
+    </script>
+
+    <div class="footer">
+        <p>&copy; 2023 Trabalho de criptografia. Todos os direitos reservados a <a href="https://uenf.br/portal/">UENF</a>.</p>
+    </div>
+</body>
+
+
+
+</html>

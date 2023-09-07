@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Criptografia</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 200px;
+            margin: 25px;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="aes.html">Criptografia AES</a></li>
+            <li><a href="des.html">Criptografia DES</a></li>
+            <li><a href="sub.html">Criptografia Substituição</a></li>
+        </ul>
+    </nav>
+
+    <h1>Sobre Cripto Chato de Mensagem</h1>
+
+    <div id="about-area">
+        <div class="container">
+            <div class="col-md-12">
+                <h3 class="about-title">Tipos de Criptografias encontradas em nossa aplicação</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="crypto-info">
+                        <h4>Criptografia em DES</h4>
+                        <p>A criptografia DES (Data Encryption Standard) opera em blocos de dados fixos de 64 bits (8 bytes) e utiliza uma chave de 56 bits para a criptografia.</p>
+                        <p>O processo de criptografia DES envolve as seguintes etapas:</p>
+                        <ol>
+                            <li>Chave: Uma chave de criptografia de 56 bits é gerada ou fornecida pelo usuário. Posteriormente, essa chave é expandida em um conjunto de subchaves a serem usadas nas diferentes etapas do algoritmo.</li>
+                            <li>Permutação Inicial: O bloco de dados a ser criptografado passa por uma permutação inicial para rearranjar os bits.</li>
+                            <li>Rodadas: O algoritmo DES consiste em uma série de rodadas que são repetidas várias vezes. Cada rodada executa uma combinação de substituições, permutações e operações lógicas nos dados.</li>
+                            <li>Substituição: Cada bloco de 48 bits do bloco de dados é substituído por um novo valor de 32 bits, usando uma tabela de substituição chamada S-Box.</li>
+                            <li>Permutação: Os bits do bloco de dados são rearranjados por meio de permutações para obter um novo arranjo.</li>
+                            <li>Operações Lógicas: Operações lógicas, como XOR (OU exclusivo), são realizadas entre os bits do bloco de dados e as subchaves correspondentes.</li>
+                            <li>Rodada Final: A última rodada executa as mesmas etapas que as rodadas anteriores, mas sem a operação de permutação.</li>
+                        </ol>
+                        <p>Após passar pelas rodadas, o bloco de dados criptografado é obtido. O mesmo processo pode ser aplicado para descriptografar o bloco de dados usando a mesma chave, mas em ordem inversa, ou seja, as subchaves são usadas na ordem
+                            reversa.
+                        </p>
+                        <p>Embora o DES tenha sido amplamente utilizado no passado, seu tamanho de chave relativamente curto tornou-o vulnerável a ataques de força bruta. Como resultado, o algoritmo foi substituído pelo AES (Advanced Encryption Standard),
+                            que oferece uma segurança mais forte e é amplamente adotado atualmente.</p>
+                        <h4>Criptografia em AES</h4>
+                        <p>A criptografia AES (Advanced Encryption Standard), também conhecida como Rijndael, é um algoritmo simétrico de criptografia amplamente utilizado para proteger informações confidenciais.</p>
+                        <p>O processo de criptografia AES envolve as seguintes etapas:</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+
+                    <div class="crypto-info">
+
+
+                        <ol>
+                            <li>Chave: Uma chave de criptografia é gerada ou fornecida pelo usuário. O tamanho da chave determina a força da criptografia.</li>
+                            <li>Expansão de Chave: A chave original é expandida em um conjunto de subchaves que serão usadas em diferentes etapas do algoritmo.</li>
+                            <li>Adição de Chave: O bloco de dados a ser criptografado é combinado (bit a bit) com uma subchave inicial.</li>
+                            <li>Rodadas: O algoritmo AES é composto por várias rodadas, dependendo do tamanho da chave. Cada rodada executa uma série de transformações nos dados para torná-los cada vez mais embaralhados e difíceis de serem reconhecidos.</li>
+                            <li>Rodada Final: A última rodada executa todas as etapas, exceto a operação MixColumns, para obter o resultado final.</li>
+                        </ol>
+                        <p>Após passar pelas rodadas, o bloco de dados criptografado é obtido. O mesmo processo pode ser aplicado para descriptografar o bloco de dados usando a chave correspondente.</p>
+                        <p>A criptografia AES é considerada segura e eficiente em termos de desempenho. Ela oferece uma forte proteção para dados sensíveis e é amplamente utilizada em sistemas e protocolos de segurança, como criptografia de arquivos, comunicação
+                            segura (por exemplo, HTTPS) e criptografia de dados armazenados.</p>
+                    </div>
+
+                    <div class="crypto-info">
+                        <h4>Criptografia por Substituição</h4>
+                        <p>A criptografia por substituição envolve substituir cada caractere no texto original por outro caractere, de acordo com uma determinada tabela de substituição.</p>
+                        <p>Também conhecida como criptografia de substituição simples, é um tipo de criptografia de substituição monoalfabética, o que significa que cada caractere no texto original é substituído por um único caractere na mensagem criptografada.</p>
+                        <p>O processo de criptografia por substituição de caracteres envolve as seguintes etapas:</p>
+                        <ol>
+                            <li>Tabela de substituição: É criada uma tabela de substituição que associa cada caractere do alfabeto original a um novo caractere correspondente na mensagem criptografada.</li>
+                            <li>Criptografia: Cada caractere no texto original é substituído pelo caractere correspondente na tabela de substituição.</li>
+                            <li>Mensagem criptografada: A mensagem criptografada é formada pelos caracteres resultantes da etapa de criptografia.</li>
+                        </ol>
+                        <p>Para descriptografar a mensagem, basta realizar o processo inverso, utilizando a mesma tabela de substituição e substituindo os caracteres da mensagem criptografada pelos caracteres correspondentes na tabela de substituição reversa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h1>Participantes</h1>
+
+
+    <div class="card-container">
+        <div class="card">
+            <img src="img/lari.jpg" alt="Imagem 1">
+            <h3>Larissa Sardinha</h3>
+            <p>Desenolvedora e Aluna</p>
+        </div>
+
+        <div class="card">
+            <img src="img/popo.jpg" alt="Imagem 2">
+            <h3>Pedro Moreth</h3>
+            <p>Desenolvedor e Aluno</p>
+        </div>
+
+        <div class="card">
+            <img src="img/ausberto.jpg" alt="Imagem 3">
+            <h3>Ausberto Castro</h3>
+            <p>Cliente e Professor</p>
+        </div>
+
+    </div>
+    <div class="footer">
+        <p>&copy; 2023 Trabalho de criptografia. Todos os direitos reservados a <a href="https://uenf.br/portal/">UENF</a>- CCT - LCMT.</p>
+    </div>
+</body>
+
+
+</html>
